@@ -1,0 +1,4 @@
+/vscode/.vscode/extensions/*
+!/vscode/.vscode/extensions/extensions.json
+
+
