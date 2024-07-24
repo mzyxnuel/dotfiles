@@ -1,3 +1,4 @@
+# Enable Write access to the repository
 # Run locally: act -P ubuntu-latest=-self-hosted
 
 on:
@@ -28,5 +29,5 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           set +e
           git add CHANGELOG.md
-          git commit -m "docs(changelog): action changelog update"
+          git commit -m "(docs)"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
