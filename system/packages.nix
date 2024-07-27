@@ -28,6 +28,11 @@
     kdePackages.kdeconnect-kde
     fastfetch
     onlyoffice-bin
+
+    # Icons & Themes
+    whitesur-kde
+    whitesur-cursors
+    whitesur-icon-theme
   ];
 
   # Allow unfree packages
