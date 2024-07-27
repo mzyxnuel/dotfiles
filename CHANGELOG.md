@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 - *(vscode)* Update extensions
 - *(p10k)* Update power10k config
 - *(nixos)* Nixos bump
+- *(modularity)* Enhance system modularity
 
 ### 📚 Documentation
 
