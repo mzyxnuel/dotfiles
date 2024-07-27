@@ -1,23 +1,22 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
 
 {
   imports =
     [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware-configuration.nix # Include the results of the hardware scan.
+      ./system/packages.nix # Include the packages
+      ./system/users.nix # Include the users
     ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "zyx"; # Define your hostname.
+  # Hostname
+  networking.hostName = "zyx"; 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -40,7 +39,6 @@
   };
 
   # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
@@ -69,48 +67,12 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.manuel = {
-    isNormalUser = true;
-    description = "manuel";
-    extraGroups = [ "networkmanager" "wheel" ];
+  # Enable Docker
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    autoPrune.enable = true;
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  
-
-  programs.firefox.package = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search <package_name>
-  environment.systemPackages = with pkgs; [
-    # Development Tools
-    git
-    github-desktop
-    vscode
-    figma-linux
-    hoppscotch
-    docker
-    kdePackages.kate
-
-    # Programming Languages
-    go
-    # Nodejs
-      nodejs_22
-      corepack_22
-    jdk
-    python3
-    php
-    gcc
-      
-    # Utilities
-    discord
-    bitwarden-desktop
-    brave
-    kdePackages.kdeconnect-kde
-    fastfetch
-  ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
