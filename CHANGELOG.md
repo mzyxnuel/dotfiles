@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 - *(p10k)* Update power10k config
 - *(nixos)* Nixos bump
 - *(modularity)* Enhance system modularity
+- *(docs)* Removed outdated readme
 
 ### 📚 Documentation
 
