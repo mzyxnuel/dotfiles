@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - *(nixos)* Nixos bump
 - *(modularity)* Enhance system modularity
 - *(docs)* Removed outdated readme
+- *(gitignore)* Removed unused gitignore
 
 ### 📚 Documentation
 
